@@ -1,4 +1,4 @@
-all : format-code ci-format-code
+all : format-code test-all
 .PHONY : all
 
 format-code:

@@ -1,0 +1,318 @@
+variables:
+  MYAPP_GITLAB_TOKEN: $CI_JOB_TOKEN
+  CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
+
+stages:
+  - linting
+  - test
+  - preview
+  - release
+  - after_release
+  - cleanup
+
+cache:
+  key:
+    files:
+      - yarn.lock
+  paths:
+    - node_modules/
+
+.production_only:
+  tags:
+    - kubernetes
+  only:
+    - master
+  except:
+    - tags
+
+.yarn_install: &yarn_install
+  - yarn ci:install
+
+linting:prettier:
+  stage: linting
+  image: docker.myapp.io/core/base/node-ci:2.1.0
+  script:
+    - *yarn_install
+    - yarn ci:prettier
+  tags:
+    - kubernetes
+
+linting:eslint:
+  tags:
+    - kubernetes
+  stage: linting
+  image: docker.myapp.io/core/base/node-ci:2.1.0
+  only:
+    changes:
+      - src/**/*
+      - tests/cypress/src/**/*
+  script:
+    - *yarn_install
+    - yarn ci:eslint || exit 0
+  artifacts:
+    reports:
+      codequality: gl-codequality.json
+
+test:cypress:
+  image: cypress/base:10
+  stage: test
+  tags:
+    - kubernetes
+  only:
+    - master
+  script:
+    - cd tests/cypress
+    - *yarn_install
+    - npx cypress cache path
+    - npx cypress cache list
+    - yarn ci:test:cypress:verify
+    - yarn ci:test:cypress:info
+    - yarn ci:test:cypress:run
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - tests/cypress/videos/**/*.mp4
+      - tests/cypress/screenshots/**/*.png
+    expire_in: 1 day
+  cache:
+    key:
+      files:
+        - tests/cypress/yarn.lock
+    paths:
+      - cache/Cypress
+      - tests/cypress/node_modules
+
+test:jest:
+  stage: test
+  image: docker.myapp.io/core/base/node-ci:2.1.0
+  only:
+    changes:
+      - src/**/*
+  script:
+    - *yarn_install
+    - yarn ci:test:jest
+  tags:
+    - kubernetes
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - junit.xml
+    paths:
+      - coverage
+    expire_in: 30 days
+
+sonarqube:
+  stage: test
+  image: sonarsource/sonar-scanner-cli:4.6
+  tags:
+    - kubernetes
+  script:
+    - >
+      sonar-scanner
+      -Dsonar.projectKey=pronto
+      -Dsonar.sources=.
+      -Dsonar.host.url=https://sonarqube.tools.myapp.sh
+      -Dsonar.login=edc30fac6f77ed1049d5dbf853fa55a367eef412
+  allow_failure: true
+  only:
+    - master
+
+.previewdeploy:
+  except:
+    - tags
+    - master
+
+.verceldeploy:
+  stage: preview
+  image: docker.myapp.io/core/base/vercel-ci:2.2.0
+  tags:
+    - kubernetes
+  needs:
+    - job: test:jest
+      optional: true
+
+vercel:deploy:branch:
+  extends:
+    - .verceldeploy
+    - .previewdeploy
+  script:
+    - PREVIEW_DEPLOYMENT_URL=$(vercel
+      -A ./devops/branch.vercel.json
+      --token $VERCEL_AUTH_TOKEN
+      --scope $VERCEL_SCOPE
+      -b NEXT_PUBLIC_VERCEL_GIT_PROVIDER="gitlab"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF="$CI_COMMIT_REF_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN="$GITLAB_USER_LOGIN"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME="$GITLAB_USER_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE="$CI_COMMIT_MESSAGE"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_ID="$CI_PROJECT_ID"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG="$CI_PROJECT_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER="$CI_PROJECT_NAMESPACE"
+      -b NEXT_PUBLIC_FLAGS_CTX_APP_NAME="development/$CI_COMMIT_REF_SLUG"
+      )
+    - echo "Branch Preview $PREVIEW_DEPLOYMENT_URL"
+    - echo "PREVIEW_DEPLOYMENT_URL=$PREVIEW_DEPLOYMENT_URL" >> .env.ci
+  artifacts:
+    reports:
+      dotenv: .env.ci
+  environment:
+    name: development/$CI_COMMIT_REF_SLUG
+    url: $PREVIEW_DEPLOYMENT_URL
+    on_stop: vercel:deploy:branch:stop
+    auto_stop_in: 1 week
+    deployment_tier: development
+
+vercel:deploy:branch:stop:
+  extends: .previewdeploy
+  tags:
+    - kubernetes
+  stage: cleanup
+  needs:
+    - job: vercel:deploy:branch
+      optional: true
+  script:
+    - vercel remove $PREVIEW_DEPLOYMENT_URL --token $VERCEL_AUTH_TOKEN --scope $VERCEL_SCOPE
+  when: manual
+  environment:
+    name: development/$CI_COMMIT_REF_SLUG
+    action: stop
+
+vercel:deploy:staging:
+  extends: .verceldeploy
+  tags:
+    - kubernetes
+  needs:
+    - job: test:cypress
+      optional: true
+  only:
+    - master
+  except:
+    - tags
+  script:
+    - DEPLOYMENT_URL=$(vercel
+      -A ./devops/staging.vercel.json
+      --token $VERCEL_AUTH_TOKEN
+      --scope $VERCEL_SCOPE
+      -b NEXT_PUBLIC_VERCEL_GIT_PROVIDER="gitlab"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF="$CI_COMMIT_REF_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN="$GITLAB_USER_LOGIN"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME="$GITLAB_USER_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE="$CI_COMMIT_MESSAGE"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_ID="$CI_PROJECT_ID"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG="$CI_PROJECT_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER="$CI_PROJECT_NAMESPACE"
+      )
+    - vercel alias $DEPLOYMENT_URL staging.secure.myapp.com --token $VERCEL_AUTH_TOKEN --scope $VERCEL_SCOPE
+  environment:
+    name: staging
+    url: https://staging.secure.myapp.com
+    deployment_tier: staging
+
+vercel:deploy:production:
+  stage: release
+  extends:
+    - .production_only
+    - .verceldeploy
+  image: docker.myapp.io/core/base/vercel-ci:2.2.0
+  when: manual
+  needs:
+    - job: test:cypress
+      optional: true
+    - vercel:deploy:staging
+  script:
+    - DEPLOYMENT_URL=$(vercel
+      --prod
+      -A ./devops/production.vercel.json
+      --token $VERCEL_AUTH_TOKEN
+      --scope $VERCEL_SCOPE
+      -b NEXT_PUBLIC_VERCEL_GIT_PROVIDER="gitlab"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF="$CI_COMMIT_REF_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN="$GITLAB_USER_LOGIN"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME="$GITLAB_USER_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE="$CI_COMMIT_MESSAGE"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_ID="$CI_PROJECT_ID"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG="$CI_PROJECT_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER="$CI_PROJECT_NAMESPACE"
+      )
+    - make release
+  environment:
+    name: production
+    url: https://secure.myapp.com
+    deployment_tier: production
+
+shortcut:release:
+  extends: .production_only
+  stage: after_release
+  needs:
+    - job: vercel:deploy:production
+  allow_failure: true
+  image: docker.myapp.io/core/devops/gitlab-shortcut-releaser:2.1.0
+  script:
+    - gitlab-shortcut-releaser
+      --gitLabToken=$GITLAB_SHORTCUT_RELEASER_GITLAB_TOKEN
+      --slackToken=$GITLAB_SHORTCUT_RELEASER_SLACK_TOKEN
+      --slackChannel=$GITLAB_SHORTCUT_RELEASER_SLACK_CHANNEL
+      --shortcutToken=$GITLAB_SHORTCUT_RELEASER_SHORTCUT_TOKEN
+      --shortcutWorkflowStateId="500010247"
+      --shortcutLabel="webapp"
+      --appName="Web App"
+      --slackEmoji=":pogcrazy:"
+
+vercel:deploy:pentest:
+  extends:
+    - .verceldeploy
+  when: manual
+  script:
+    - PREVIEW_DEPLOYMENT_URL=$(vercel
+      -A ./devops/pentest.vercel.json
+      --token $VERCEL_AUTH_TOKEN
+      --scope $VERCEL_SCOPE
+      -b NEXT_PUBLIC_VERCEL_GIT_PROVIDER="gitlab"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF="$CI_COMMIT_REF_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_VERCEL_GIT_COMMIT_SHA="$CI_COMMIT_SHA"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN="$GITLAB_USER_LOGIN"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME="$GITLAB_USER_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE="$CI_COMMIT_MESSAGE"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_ID="$CI_PROJECT_ID"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG="$CI_PROJECT_NAME"
+      -b NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER="$CI_PROJECT_NAMESPACE"
+      -b NEXT_PUBLIC_FLAGS_CTX_APP_NAME="development/$CI_COMMIT_REF_SLUG"
+      )
+    - echo "Branch Preview $PREVIEW_DEPLOYMENT_URL"
+    - PENTEST_DEPLOYMENT_URL=$(date +'%Y%m').vercel.pentest.myapp.sh
+    - echo "PREVIEW_DEPLOYMENT_URL=$PREVIEW_DEPLOYMENT_URL" >> .env.ci
+    - echo "Pentest Preview https://$PENTEST_DEPLOYMENT_URL"
+    - vercel alias $PREVIEW_DEPLOYMENT_URL $PENTEST_DEPLOYMENT_URL --token $VERCEL_AUTH_TOKEN --scope $VERCEL_SCOPE
+  artifacts:
+    reports:
+      dotenv: .env.ci
+  environment:
+    name: pentest/$CI_COMMIT_REF_SLUG
+    url: https://$PENTEST_DEPLOYMENT_URL
+    on_stop: vercel:deploy:pentest:stop
+    auto_stop_in: 1 week
+    deployment_tier: development
+
+vercel:deploy:pentest:stop:
+  tags:
+    - kubernetes
+  stage: cleanup
+  needs:
+    - job: vercel:deploy:pentest
+      optional: true
+  script:
+    - vercel remove $PREVIEW_DEPLOYMENT_URL --token $VERCEL_AUTH_TOKEN --scope $VERCEL_SCOPE
+  when: manual
+  environment:
+    name: pentest/$CI_COMMIT_REF_SLUG
+    action: stop
