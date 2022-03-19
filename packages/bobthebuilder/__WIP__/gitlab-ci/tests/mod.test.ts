@@ -20,11 +20,11 @@ for await (const dirEntry of Deno.readDir(fixturesDirPath)) {
       );
       const testCase = await import(
         join(fixturesDirPath, dirEntry.name.replace(".yaml", ".ts"))
-        );
+      );
       const actual = parseYaml(fixtureText);
       const expected = testCase.default();
 
       assertEquals(expected.toJSON(), actual);
     },
-  })
+  });
 }
