@@ -1,5 +1,5 @@
 import * as path from "https://deno.land/std/path/mod.ts";
-import { log } from "../../logger.ts";
+import { log } from "../../logger/mod.ts";
 import { Args, getArg, runMain } from "../mod.ts";
 
 async function main(args: Args) {

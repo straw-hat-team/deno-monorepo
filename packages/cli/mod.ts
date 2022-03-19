@@ -1,5 +1,5 @@
 import { Args, parse } from "https://deno.land/std/flags/mod.ts";
-import { onFailure } from "../logger.ts";
+import { onFailure } from "../logger/mod.ts";
 
 export type { Args };
 

@@ -3,7 +3,7 @@ import * as path from "https://deno.land/std/path/mod.ts";
 import * as log from "https://deno.land/std/log/mod.ts";
 import { ensureFile } from "https://deno.land/std@0.116.0/fs/mod.ts";
 import { getArg, runMain } from "../mod.ts";
-import { walkDir } from "../../fs.ts";
+import { walkDir } from "../../fs/mod.ts";
 
 const RESERVED_PAGES = ["_document.tsx", "_app.tsx", "_error.tsx"];
 
