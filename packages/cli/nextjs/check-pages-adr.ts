@@ -16,7 +16,7 @@ async function checkReservedRoute(
 
   try {
     await ensureFile(thePath);
-  } catch (e) {
+  } catch (_) {
     log.error(thePath);
   }
 }
@@ -40,7 +40,7 @@ async function checkRoute(projectDir: string, parsedPath: path.ParsedPath) {
 
   try {
     await ensureFile(thePath);
-  } catch (e) {
+  } catch (_) {
     log.error(thePath);
   }
 }

@@ -4,7 +4,7 @@ import { onFailure } from "../logger.ts";
 export type { Args };
 
 export function getArg(
-  command: any,
+  command: unknown,
   argName: string,
   opts?: { required?: boolean },
 ) {
@@ -18,6 +18,6 @@ export function getArg(
   return value;
 }
 
-export function runMain(callback: (args: Args) => Promise<any>) {
+export function runMain(callback: (args: Args) => Promise<unknown>) {
   return callback(parse(Deno.args)).catch(onFailure);
 }
