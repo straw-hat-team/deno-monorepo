@@ -1,3 +1,5 @@
+// deno-lint-ignore-file no-explicit-any
+
 interface IJsonMarshaler {
   /**
    * Return the JSON representation of the resource.

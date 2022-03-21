@@ -1,3 +1,5 @@
+// deno-lint-ignore-file no-explicit-any
+
 import { IJsonMarshaler, removeEmpty } from "../resource.ts";
 import { Image } from "./images.ts";
 import { Stage } from "./stages.ts";
