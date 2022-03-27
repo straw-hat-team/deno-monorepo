@@ -1,4 +1,4 @@
-import { log, jsonStringify } from "../../logger/mod.ts";
+import { jsonStringify, log } from "../../logger/mod.ts";
 import { Args, getArg, runMain } from "../mod.ts";
 import { executeRequest } from "./mod.ts";
 
@@ -24,12 +24,14 @@ async function main(args: Args) {
   });
 
   log.info(
-    `release created ${jsonStringify({
-      tagName,
-      id: response.id,
-      repo: `${githubOrg}/${githubRepo}`,
-      url: response.html_url,
-    })}`,
+    `release created ${
+      jsonStringify({
+        tagName,
+        id: response.id,
+        repo: `${githubOrg}/${githubRepo}`,
+        url: response.html_url,
+      })
+    }`,
   );
 }
 

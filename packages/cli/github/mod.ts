@@ -1,5 +1,5 @@
 import { replaceDynamicPathParams } from "../../openapi/mod.ts";
-import { jsonStringify, log } from '../../logger/mod.ts';
+import { jsonStringify, log } from "../../logger/mod.ts";
 
 export async function executeRequest<TResponse = unknown>(command: {
   token: string;
@@ -10,20 +10,21 @@ export async function executeRequest<TResponse = unknown>(command: {
     body?: Record<string, unknown>;
   };
 }): Promise<TResponse> {
-  const relativeUrl = replaceDynamicPathParams(command.url, command.params?.path);
-  const response = await fetch("https://api.github.com" + relativeUrl,
-    {
-      method: command.method,
-      headers: {
-        Accept: "application/vnd.github.v3+json",
-        Authorization: `token ${command.token}`,
-        "Content-Type": "application/json",
-      },
-      body: command.params?.body
-        ? JSON.stringify(command.params?.body)
-        : undefined,
-    },
+  const relativeUrl = replaceDynamicPathParams(
+    command.url,
+    command.params?.path,
   );
+  const response = await fetch("https://api.github.com" + relativeUrl, {
+    method: command.method,
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+      Authorization: `token ${command.token}`,
+      "Content-Type": "application/json",
+    },
+    body: command.params?.body
+      ? JSON.stringify(command.params?.body)
+      : undefined,
+  });
 
   if (response.status === 204) {
     // @ts-ignore TODO: Figure out how to remove this ignore.
@@ -41,7 +42,11 @@ export async function executeRequest<TResponse = unknown>(command: {
   const body = await response.json();
 
   if (!response.ok) {
-    throw new Error(`${command.method} ${relativeUrl} ${response.status} ${response.statusText} ${jsonStringify(body)}`);
+    throw new Error(
+      `${command.method} ${relativeUrl} ${response.status} ${response.statusText} ${
+        jsonStringify(body)
+      }`,
+    );
   }
 
   return body;

@@ -35,11 +35,13 @@ async function main(args: Args) {
   });
 
   log.info(
-    `release deleted ${jsonStringify({
-      tagName,
-      id: response.id,
-      repo: `${githubOrg}/${githubRepo}`,
-    })}`,
+    `release deleted ${
+      jsonStringify({
+        tagName,
+        id: response.id,
+        repo: `${githubOrg}/${githubRepo}`,
+      })
+    }`,
   );
 
   await executeRequest({
@@ -56,10 +58,12 @@ async function main(args: Args) {
   });
 
   log.info(
-    `tag deleted ${jsonStringify({
-      tagName,
-      repo: `${githubOrg}/${githubRepo}`,
-    })}`,
+    `tag deleted ${
+      jsonStringify({
+        tagName,
+        repo: `${githubOrg}/${githubRepo}`,
+      })
+    }`,
   );
 }
 
