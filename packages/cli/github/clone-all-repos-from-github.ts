@@ -1,40 +1,28 @@
 import { log } from "../../logger/mod.ts";
 import { Args, getArg, runMain } from "../mod.ts";
-
-async function getOrgRepos(
-  command: { githubToken: string; githubOrg: string },
-) {
-  const response = await fetch(
-    `https://api.github.com/orgs/${command.githubOrg}/repos`,
-    {
-      headers: {
-        Authorization: `token ${command.githubToken}`,
-      },
-    },
-  );
-
-  if (!response.ok) {
-    throw new Error(`${response.status} ${response.statusText}`);
-  }
-
-  return response.json();
-}
+import { executeRequest } from './mod.ts';
 
 async function main(args: Args) {
   const githubToken = getArg(args, "github-token");
   const githubOrg = getArg(args, "github-org");
   const outputDir = getArg(args, "output-dir");
 
-  const repos = await getOrgRepos({
-    githubToken: githubToken,
-    githubOrg: githubOrg,
+  const response = await executeRequest<Array<{ clone_url: string; }>>({
+    method: "GET",
+    url: "/orgs/{owner}/repos",
+    token: githubToken,
+    params: {
+      path: {
+        owner: githubOrg,
+      },
+    },
   });
 
   log.info(
-    `Cloning https://github.com/orgs/${githubOrg} repos into ${outputDir} directory`,
+    `cloning https://github.com/orgs/${githubOrg} repos into ${outputDir} directory`,
   );
 
-  const tasks = repos.map(async (repo: { clone_url: string }) => {
+  const tasks = response.map(async (repo) => {
     const process = Deno.run({
       cmd: ["git", "clone", repo.clone_url],
       cwd: outputDir,

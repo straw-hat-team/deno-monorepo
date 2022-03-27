@@ -4,7 +4,7 @@ import { onFailure } from "../logger/mod.ts";
 export type { Args };
 
 export function getArg(
-  command: unknown,
+  command: Record<string, string>,
   argName: string,
   opts?: { required?: boolean },
 ) {
@@ -12,7 +12,7 @@ export function getArg(
   const required = opts?.required ?? true;
 
   if (!value && required) {
-    throw new Error(`Missing argument ${argName}`);
+    throw new Error(`Missing argument --${argName}`);
   }
 
   return value;
