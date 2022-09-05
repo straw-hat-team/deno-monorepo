@@ -1,5 +1,5 @@
 import { replaceDynamicPathParams } from "../../openapi/mod.ts";
-import { jsonStringify, log } from "../../logger/mod.ts";
+import { jsonStringify } from "../../logger/mod.ts";
 
 export async function executeRequest<TResponse = unknown>(command: {
   token: string;
