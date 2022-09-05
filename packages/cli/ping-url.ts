@@ -1,6 +1,6 @@
 import { log } from "../logger/mod.ts";
 import { Args, getArg, runMain } from "./mod.ts";
-import { sleep } from '../clock.ts';
+import { sleep } from "../clock.ts";
 
 function getIntervalArg(args: Args) {
   const interval = getArg(args, "interval", { required: false });
