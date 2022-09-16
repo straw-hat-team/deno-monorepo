@@ -1,9 +1,9 @@
 import * as path from "https://deno.land/std/path/mod.ts";
 import { log } from "../../logger/mod.ts";
 import { Args, getArg, runMain } from "../mod.ts";
-import { walkDir } from '../../fs/mod.ts';
+import { walkDir } from "../../fs/mod.ts";
 
-const ignoredFiles = ['.DS_Store'];
+const ignoredFiles = [".DS_Store"];
 
 function isIgnoredFile(file: string) {
   for (const ignoredFilesKey in ignoredFiles) {
@@ -23,7 +23,7 @@ async function main(args: Args) {
       continue;
     }
 
-    if (file.endsWith('_test.exs')) {
+    if (file.endsWith("_test.exs")) {
       continue;
     }
 
