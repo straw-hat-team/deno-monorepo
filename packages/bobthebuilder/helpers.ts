@@ -32,3 +32,32 @@ export async function maybeChmod(path: string | URL, mode: number) {
     throw err;
   }
 }
+
+/**
+ * Returns undefined when the array is empty.
+ * @param array
+ */
+export function excludeEmptyArray<T extends unknown[]>(array: T): T | undefined {
+  return array.length > 0 ? array : undefined;
+}
+
+/**
+ * Returns undefined when the object does not have any keys.
+ * @param obj
+ */
+export function excludeEmptyObject<T>(obj: T): T | undefined {
+  return Object.keys(obj).length > 0 ? obj : undefined;
+}
+
+/**
+ * Removes the keys from the object that have undefined values.
+ * @param obj
+ */
+export function removeUndefinedValues<T>(obj: T): T {
+  return Object.entries(obj).reduce((acc, [key, value]) => {
+    if (value !== undefined) {
+      acc[key as keyof T] = value;
+    }
+    return acc;
+  }, {} as T);
+}
