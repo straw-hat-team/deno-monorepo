@@ -13,13 +13,11 @@ Deno.test(
   }),
   async () => {
     const project = makeTmpTestProject();
-    const file = new CoverallsJsonFile(project, "hello-world", {
-      config: {
-        coverage_options: {
-          treat_no_relevant_lines_as_covered: true,
-        },
-      },
-    });
+    const file = new CoverallsJsonFile(project, "hello-world")
+      .setCoverageOptions({ treatNoRelevantLinesAsCovered: true })
+      .addSkipFile("test/support")
+      .addSkipFile("_build")
+      .addSkipFile("deps");
 
     await project.run();
 
