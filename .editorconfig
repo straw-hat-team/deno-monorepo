@@ -12,7 +12,7 @@ max_line_length = 120
 [*.{diff,md}]
 trim_trailing_whitespace = false
 
-[/test/fixtures/**]
+[tests/bobthebuilder/fixtures/**]
 insert_final_newline = false
 trim_trailing_whitespace = false
 
