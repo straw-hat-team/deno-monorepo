@@ -2,12 +2,16 @@ import type { NodeId } from "../../../project/mod.ts";
 import type { WithDirectoryOption } from "../../file.ts";
 import { File, getWithDirectoryFilePath } from "../../file.ts";
 import { Project } from "../../../project/mod.ts";
-import { excludeEmptyArray, excludeEmptyObject, removeUndefinedValues } from '../../../helpers.ts';
+import {
+  excludeEmptyArray,
+  excludeEmptyObject,
+  removeUndefinedValues,
+} from "../../../helpers.ts";
 
 type TerminalOptions = {
   fileColumnWidth?: number;
   printFiles?: boolean;
-}
+};
 
 type CoverageOptions = {
   treatNoRelevantLinesAsCovered?: boolean;
@@ -75,21 +79,28 @@ export class CoverallsJsonFile extends File {
   }
 
   override getFileContent() {
-    return JSON.stringify(removeUndefinedValues({
-      default_stop_words: excludeEmptyArray(Array.from(this.#defaultStopWords)),
-      custom_stop_words: excludeEmptyArray(Array.from(this.#customStopWords)),
-      skip_files: excludeEmptyArray(Array.from(this.#skipFiles)),
-      coverage_options: excludeEmptyObject(removeUndefinedValues({
-        treat_no_relevant_lines_as_covered: this.#coverageOptions.treatNoRelevantLinesAsCovered,
-        output_dir: this.#coverageOptions.outputDir,
-        template_path: this.#coverageOptions.templatePath,
-        minimum_coverage: this.#coverageOptions.minimumCoverage,
-        xml_base_dir: this.#coverageOptions.xmlBaseDir,
-      })),
-      terminal_options: excludeEmptyObject(removeUndefinedValues({
-        file_column_width: this.#terminalOptions.fileColumnWidth,
-        print_files: this.#terminalOptions.printFiles
-      }))
-    }), null, 2);
+    return JSON.stringify(
+      removeUndefinedValues({
+        default_stop_words: excludeEmptyArray(
+          Array.from(this.#defaultStopWords),
+        ),
+        custom_stop_words: excludeEmptyArray(Array.from(this.#customStopWords)),
+        skip_files: excludeEmptyArray(Array.from(this.#skipFiles)),
+        coverage_options: excludeEmptyObject(removeUndefinedValues({
+          treat_no_relevant_lines_as_covered:
+            this.#coverageOptions.treatNoRelevantLinesAsCovered,
+          output_dir: this.#coverageOptions.outputDir,
+          template_path: this.#coverageOptions.templatePath,
+          minimum_coverage: this.#coverageOptions.minimumCoverage,
+          xml_base_dir: this.#coverageOptions.xmlBaseDir,
+        })),
+        terminal_options: excludeEmptyObject(removeUndefinedValues({
+          file_column_width: this.#terminalOptions.fileColumnWidth,
+          print_files: this.#terminalOptions.printFiles,
+        })),
+      }),
+      null,
+      2,
+    );
   }
 }

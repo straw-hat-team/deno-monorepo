@@ -7,4 +7,3 @@ format-code:
 
 test-all:
 	@deno test --allow-write --allow-read --allow-none
-

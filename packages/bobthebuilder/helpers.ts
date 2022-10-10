@@ -37,7 +37,9 @@ export async function maybeChmod(path: string | URL, mode: number) {
  * Returns undefined when the array is empty.
  * @param array
  */
-export function excludeEmptyArray<T extends unknown[]>(array: T): T | undefined {
+export function excludeEmptyArray<T extends unknown[]>(
+  array: T,
+): T | undefined {
   return array.length > 0 ? array : undefined;
 }
 
