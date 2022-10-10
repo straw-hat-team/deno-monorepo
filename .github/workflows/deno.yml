@@ -14,10 +14,16 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v2
 
+      - uses: straw-hat-team/github-actions-workflows/asdf/git-version@v1.5.0
+        id: deno-version
+        name: Get Deno version from .tool-versions
+        with:
+          plugin-name: deno
+
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.x
+          deno-version: v${{ steps.deno-version.outputs.plugin-version }}
 
       - name: Verify formatting
         run: deno fmt --check

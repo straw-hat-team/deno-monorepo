@@ -1,0 +1,12 @@
+{
+  "fmt": {
+    "files": {
+      "include": [
+        "./packages/"
+      ],
+      "exclude": [
+        "./tests/bobthebuilder/fixtures"
+      ]
+    }
+  }
+}
