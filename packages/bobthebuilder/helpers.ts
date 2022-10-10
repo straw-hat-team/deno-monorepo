@@ -3,6 +3,8 @@
  * @param path
  * @param options
  */
+import { AnyObject, NonUndefined } from "../types.ts";
+
 export async function maybeRemove(
   path: string | URL,
   options?: Deno.RemoveOptions,
@@ -55,11 +57,11 @@ export function excludeEmptyObject<T>(obj: T): T | undefined {
  * Removes the keys from the object that have undefined values.
  * @param obj
  */
-export function removeUndefinedValues<T>(obj: T): T {
-  return Object.entries(obj).reduce((acc, [key, value]) => {
-    if (value !== undefined) {
-      acc[key as keyof T] = value;
-    }
-    return acc;
-  }, {} as T);
+export function removeUndefinedValues<T extends AnyObject>(
+  obj: T,
+): { [x: string]: NonUndefined<T[keyof T]> } {
+  const entries = Object.entries(obj).filter(([, value]) =>
+    value !== undefined
+  );
+  return Object.fromEntries(entries);
 }
