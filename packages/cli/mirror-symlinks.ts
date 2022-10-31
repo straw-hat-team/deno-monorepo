@@ -10,7 +10,6 @@ import { walkDir } from "../fs/mod.ts";
 async function main(args: Args) {
   const fromDir = getArg(args, "from-dir");
   const toDir = getArg(args, "to-dir");
-  const autoConfirm = getArg(args, "auto-confirm", { required: false }) ?? false;
 
   for await (const filePath of walkDir(fromDir)) {
     const parsedFilePath = path.parse(filePath);
@@ -28,6 +27,7 @@ async function main(args: Args) {
       cmd: [
         "ln",
         "-f",
+        filePath,
         destFilePath,
       ],
     });
