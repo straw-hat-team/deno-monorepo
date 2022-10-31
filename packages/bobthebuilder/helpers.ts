@@ -49,7 +49,7 @@ export function excludeEmptyArray<T extends unknown[]>(
  * Returns undefined when the object does not have any keys.
  * @param obj
  */
-export function excludeEmptyObject<T extends {}>(obj: T): T | undefined {
+export function excludeEmptyObject<T extends Record<string, unknown>>(obj: T): T | undefined {
   return Object.keys(obj).length > 0 ? obj : undefined;
 }
 
