@@ -1,4 +1,3 @@
-import * as path from "https://deno.land/std/path/mod.ts";
 import { log } from "../../logger/mod.ts";
 import { Args, getArg, runMain } from "../mod.ts";
 import { walkDir } from "../../fs/mod.ts";
