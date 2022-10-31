@@ -14,7 +14,7 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v2
 
-      - uses: straw-hat-team/github-actions-workflows/asdf/git-version@master
+      - uses: straw-hat-team/github-actions-workflows/asdf/get-version@master
         id: deno-version
         name: Get Deno version from .tool-versions
         with:
