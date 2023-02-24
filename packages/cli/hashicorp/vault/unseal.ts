@@ -1,4 +1,4 @@
-import { Args, getArg, runMain } from "./mod.ts";
+import { Args, getArg, runMain } from "../../mod.ts";
 
 async function main(args: Args) {
   const context = getArg(args, "context", { required: false }) ??
