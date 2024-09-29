@@ -1,0 +1,2946 @@
+records:
+  - Name: FILE HEADER RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘1’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: PRIORITY CODE
+        FieldInclusionRequirement: R
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: IMMEDIATE DESTINATION
+        FieldInclusionRequirement: M
+        Contents: bTTTTAAAAC
+        Length: 10
+        Position: 04-13
+      - Field: 4
+        ElementName: IMMEDIATE ORIGIN
+        FieldInclusionRequirement: M
+        Contents: bTTTTAAAAC
+        Length: 10
+        Position: 14-23
+      - Field: 5
+        ElementName: FILE CREATION DATE
+        FieldInclusionRequirement: M
+        Contents: YYMMDD
+        Length: 6
+        Position: 24-29
+      - Field: 6
+        ElementName: FILE CREATION TIME
+        FieldInclusionRequirement: O
+        Contents: HHMM
+        Length: 4
+        Position: 30-33
+      - Field: 7
+        ElementName: FILE ID MODIFIER
+        FieldInclusionRequirement: M
+        Contents: UPPER CASE A-Z NUMERIC 0-9
+        Length: 1
+        Position: 34-34
+      - Field: 8
+        ElementName: RECORD SIZE
+        FieldInclusionRequirement: M
+        Contents: ‘094’
+        Length: 3
+        Position: 35-37
+      - Field: 9
+        ElementName: BLOCKING FACTOR
+        FieldInclusionRequirement: M
+        Contents: ‘10’
+        Length: 2
+        Position: 38-39
+      - Field: 10
+        ElementName: FORMAT CODE
+        FieldInclusionRequirement: M
+        Contents: ‘1’
+        Length: 1
+        Position: 40-40
+      - Field: 11
+        ElementName: IMMEDIATE DESTINATION NAME
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 23
+        Position: 41-63
+      - Field: 12
+        ElementName: IMMEDIATE ORIGIN NAME
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 23
+        Position: 64-86
+      - Field: 13
+        ElementName: REFERENCE CODE
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 8
+        Position: 87-94
+
+  - Name: FILE CONTROL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘9’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: BATCH COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 6
+        Position: 02-07
+      - Field: 3
+        ElementName: BLOCK COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 6
+        Position: 08-13
+      - Field: 4
+        ElementName: ENTRY/ADDENDA COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 8
+        Position: 14-21
+      - Field: 5
+        ElementName: ENTRY HASH
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 10
+        Position: 22-31
+      - Field: 6
+        ElementName: TOTAL DEBIT ENTRY DOLLAR AMOUNT IN FILE
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 12
+        Position: 32-43
+      - Field: 7
+        ElementName: TOTAL CREDIT ENTRY DOLLAR AMOUNT IN FILE
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 12
+        Position: 44-55
+      - Field: 8
+        ElementName: RESERVED
+        FieldInclusionRequirement: N/A
+        Contents: Blank
+        Length: 39
+        Position: 56-94
+
+  - Name: COMPANY/BATCH HEADER RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘5’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: SERVICE CLASS CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 3
+        Position: 02-04
+      - Field: 3
+        ElementName: COMPANY NAME
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 16
+        Position: 05-20
+      - Field: 4
+        ElementName: COMPANY DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 20
+        Position: 21-40
+      - Field: 5
+        ElementName: COMPANY IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 10
+        Position: 41-50
+      - Field: 6
+        ElementName: STANDARD ENTRY CLASS CODE
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 3
+        Position: 51-53
+      - Field: 7
+        ElementName: COMPANY ENTRY DESCRIPTION
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 10
+        Position: 54-63
+      - Field: 8
+        ElementName: COMPANY DESCRIPTIVE DATE
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 6
+        Position: 64-69
+      - Field: 9
+        ElementName: EFFECTIVE ENTRY DATE
+        FieldInclusionRequirement: R
+        Contents: YYMMDD
+        Length: 6
+        Position: 70-75
+      - Field: 10
+        ElementName: SETTLEMENT DATE (JULIAN)
+        FieldInclusionRequirement: Inserted by ACH Operator
+        Contents: Numeric
+        Length: 3
+        Position: 76-78
+      - Field: 11
+        ElementName: ORIGINATOR STATUS CODE
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 1
+        Position: 79-79
+      - Field: 12
+        ElementName: ORIGINATING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 80-87
+      - Field: 13
+        ElementName: BATCH NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 7
+        Position: 88-94
+
+  - Name: COMPANY/BATCH CONTROL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘8’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: SERVICE CLASS CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 3
+        Position: 02-04
+      - Field: 3
+        ElementName: ENTRY/ ADDENDA COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 6
+        Position: 05-10
+      - Field: 4
+        ElementName: ENTRY HASH
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 10
+        Position: 11-20
+      - Field: 5
+        ElementName: TOTAL DEBIT ENTRY DOLLAR AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 12
+        Position: 21-32
+      - Field: 6
+        ElementName: TOTAL CREDIT ENTRY DOLLAR AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 12
+        Position: 33-44
+      - Field: 7
+        ElementName: COMPANY IDENTIFICATION
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 10
+        Position: 45-54
+      - Field: 8
+        ElementName: MESSAGE AUTHENTICATION CODE
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 19
+        Position: 55-73
+      - Field: 9
+        ElementName: RESERVED
+        FieldInclusionRequirement: N/A
+        Contents: Blank
+        Length: 6
+        Position: 74-79
+      - Field: 10
+        ElementName: ORIGINATING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 80-87
+      - Field: 11
+        ElementName: BATCH NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 7
+        Position: 88-94
+
+  - Name: IAT COMPANY/BATCH HEADER RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘5’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: SERVICE CLASS CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 3
+        Position: 02-04
+      - Field: 3
+        ElementName: IAT INDICATOR
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 16
+        Position: 05-20
+      - Field: 4
+        ElementName: FOREIGN EXCHANGE INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 2
+        Position: 21-22
+      - Field: 5
+        ElementName: FOREIGN EXCHANGE REFERENCE INDICATOR
+        FieldInclusionRequirement: R
+        Contents: Numeric
+        Length: 1
+        Position: 23-23
+      - Field: 6
+        ElementName: FOREIGN EXCHANGE REFERENCE
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 15
+        Position: 24-38
+      - Field: 7
+        ElementName: ISO DESTINATION COUNTRY CODE
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 2
+        Position: 39-40
+      - Field: 8
+        ElementName: ORIGINATOR IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 10
+        Position: 41-50
+      - Field: 9
+        ElementName: STANDARD ENTRY CLASS CODE
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 3
+        Position: 51-53
+      - Field: 10
+        ElementName: COMPANY ENTRY DESCRIPTION
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 10
+        Position: 54-63
+      - Field: 11
+        ElementName: ISO ORIGINATING CURRENCY CODE
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 3
+        Position: 64-66
+      - Field: 12
+        ElementName: ISO DESTINATION CURRENCY CODE
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 3
+        Position: 67-69
+      - Field: 13
+        ElementName: EFFECTIVE ENTRY DATE
+        FieldInclusionRequirement: R
+        Contents: YYMMDD
+        Length: 6
+        Position: 70-75
+      - Field: 14
+        ElementName: SETTLEMENT DATE (JULIAN)
+        FieldInclusionRequirement: Inserted by ACH Operator
+        Contents: Numeric
+        Length: 3
+        Position: 76-78
+      - Field: 15
+        ElementName: ORIGINATOR STATUS CODE
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 1
+        Position: 79-79
+      - Field: 16
+        ElementName: GO IDENTIFICATION/ ORIGINATING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 80-87
+      - Field: 17
+        ElementName: BATCH NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 7
+        Position: 88-94
+
+  - Name: ADV FILE HEADER RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘1’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: PRIORITY CODE
+        FieldInclusionRequirement: R
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: IMMEDIATE DESTINATION
+        FieldInclusionRequirement: M
+        Contents: bTTTTAAAAC
+        Length: 10
+        Position: 04-13
+      - Field: 4
+        ElementName: IMMEDIATE ORIGIN
+        FieldInclusionRequirement: M
+        Contents: bTTTTAAAAC
+        Length: 10
+        Position: 14-23
+      - Field: 5
+        ElementName: FILE CREATION DATE
+        FieldInclusionRequirement: M
+        Contents: YYMMDD
+        Length: 6
+        Position: 24-29
+      - Field: 6
+        ElementName: FILE CREATION TIME
+        FieldInclusionRequirement: O
+        Contents: HHMM
+        Length: 4
+        Position: 30-33
+      - Field: 7
+        ElementName: FILE ID MODIFIER
+        FieldInclusionRequirement: M
+        Contents: UPPER CASE A-Z NUMERIC 0-9
+        Length: 1
+        Position: 34-34
+      - Field: 8
+        ElementName: RECORD SIZE
+        FieldInclusionRequirement: M
+        Contents: ‘094’
+        Length: 3
+        Position: 35-37
+      - Field: 9
+        ElementName: BLOCKING FACTOR
+        FieldInclusionRequirement: M
+        Contents: ‘10’
+        Length: 2
+        Position: 38-39
+      - Field: 10
+        ElementName: FORMAT CODE
+        FieldInclusionRequirement: M
+        Contents: ‘1’
+        Length: 1
+        Position: 40-40
+      - Field: 11
+        ElementName: IMMEDIATE DESTINATION NAME
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 23
+        Position: 41-63
+      - Field: 12
+        ElementName: IMMEDIATE ORIGIN NAME
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 23
+        Position: 64-86
+      - Field: 13
+        ElementName: REFERENCE CODE
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 8
+        Position: 87-94
+
+  - Name: ADV FILE CONTROL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘9’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: BATCH COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 6
+        Position: 02-07
+      - Field: 3
+        ElementName: BLOCK COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 6
+        Position: 08-13
+      - Field: 4
+        ElementName: ENTRY/ADDENDA COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 8
+        Position: 14-21
+      - Field: 5
+        ElementName: ENTRY HASH
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 10
+        Position: 22-31
+      - Field: 6
+        ElementName: TOTAL DEBIT ENTRY DOLLAR AMOUNT IN FILE
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 20
+        Position: 32-51
+      - Field: 7
+        ElementName: TOTAL CREDIT ENTRY DOLLAR AMOUNT IN FILE
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 20
+        Position: 52-71
+      - Field: 8
+        ElementName: RESERVED
+        FieldInclusionRequirement: N/A
+        Contents: Blank
+        Length: 23
+        Position: 72-94
+
+  - Name: ADV COMPANY/BATCH CONTROL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘8’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: SERVICE CLASS CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 3
+        Position: 02-04
+      - Field: 3
+        ElementName: ENTRY/ADDENDA COUNT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 6
+        Position: 05-10
+      - Field: 4
+        ElementName: ENTRY HASH
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 10
+        Position: 11-20
+      - Field: 5
+        ElementName: TOTAL DEBIT ENTRY DOLLAR AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 20
+        Position: 21-40
+      - Field: 6
+        ElementName: TOTAL CREDIT ENTRY DOLLAR AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 20
+        Position: 41-60
+      - Field: 7
+        ElementName: ACH OPERATOR DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 19
+        Position: 61-79
+      - Field: 8
+        ElementName: ORIGINATING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 80-87
+      - Field: 9
+        ElementName: BATCH NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 7
+        Position: 88-94
+
+  - Name: ADV ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 15
+        Position: 13-27
+      - Field: 6
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 12
+        Position: 28-39
+      - Field: 7
+        ElementName: ADVICE ROUTING NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 9
+        Position: 40-48
+      - Field: 8
+        ElementName: FILE IDENTIFICATION
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 5
+        Position: 49-53
+      - Field: 9
+        ElementName: ACH OPERATOR DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 1
+        Position: 54-54
+      - Field: 10
+        ElementName: INDIVIDUAL NAME
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 22
+        Position: 55-76
+      - Field: 11
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 12
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 13
+        ElementName: ROUTING NUMBER OF ACH OPERATOR
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 80-87
+      - Field: 14
+        ElementName: JULIAN DATE ON WHICH THIS ADVICE IS CREATED
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 3
+        Position: 88-90
+      - Field: 15
+        ElementName: SEQUENCE NUMBER WITHIN BATCH
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 4
+        Position: 91-94
+
+  - Name: ARC ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 17
+        Position: 13-29
+      - Field: 6
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 10
+        Position: 30-39
+      - Field: 7
+        ElementName: CHECK SERIAL NUMBER
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 15
+        Position: 40-54
+      - Field: 8
+        ElementName: INDIVIDUAL NAME/RECEIVING COMPANY NAME
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 22
+        Position: 55-76
+      - Field: 9
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 10
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 11
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+
+  - Name: BOC ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 17
+        Position: 13-29
+      - Field: 6
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 10
+        Position: 30-39
+      - Field: 7
+        ElementName: CHECK SERIAL NUMBER
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 15
+        Position: 40-54
+      - Field: 8
+        ElementName: INDIVIDUAL NAME/RECEIVING COMPANY NAME
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 22
+        Position: 55-76
+      - Field: 9
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 10
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 11
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+
+  - Name: CCD ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 17
+        Position: 13-29
+      - Field: 6
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 10
+        Position: 30-39
+      - Field: 7
+        ElementName: IDENTIFICATION NUMBER
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 15
+        Position: 40-54
+      - Field: 8
+        ElementName: RECEIVING COMPANY NAME
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 22
+        Position: 55-76
+      - Field: 9
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 10
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 11
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+    Addenda:
+      - Name: CCD ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘05’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: PAYMENT RELATED INFORMATION
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 80
+            Position: 04-83
+          - Field: 4
+            ElementName: ADDENDA SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 84-87
+          - Field: 5
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+  - Name: CIE ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 17
+        Position: 13-29
+      - Field: 6
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 10
+        Position: 30-39
+      - Field: 7
+        ElementName: INDIVIDUAL NAME
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 15
+        Position: 40-54
+      - Field: 8
+        ElementName: INDIVIDUAL IDENTIFICATION NUMBER
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 22
+        Position: 55-76
+      - Field: 9
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 10
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 11
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+    Addenda:
+      - Name: CIE ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘05’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: PAYMENT RELATED INFORMATION
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 80
+            Position: 04-83
+          - Field: 4
+            ElementName: ADDENDA SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 84-87
+          - Field: 5
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+  - Name: CTX CORPORATE ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 17
+        Position: 13-29
+      - Field: 6
+        ElementName: TOTAL AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 10
+        Position: 30-39
+      - Field: 7
+        ElementName: IDENTIFICATION NUMBER
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 15
+        Position: 40-54
+      - Field: 8
+        ElementName: NUMBER OF ADDENDA RECORDS
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 4
+        Position: 55-58
+      - Field: 9
+        ElementName: RECEIVING COMPANY NAME/ID NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 16
+        Position: 59-74
+      - Field: 10
+        ElementName: RESERVED
+        FieldInclusionRequirement: N/A
+        Contents: Blank
+        Length: 2
+        Position: 75-76
+      - Field: 11
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 12
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 13
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+    Addenda:
+      - Name: CTX ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘05’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: PAYMENT RELATED INFORMATION
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 80
+            Position: 04-83
+          - Field: 4
+            ElementName: ADDENDA SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 84-87
+          - Field: 5
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+  - Name: DNE ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 17
+        Position: 13-29
+      - Field: 6
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 10
+        Position: 30-39
+      - Field: 7
+        ElementName: INDIVIDUAL IDENTIFICATION NUMBER
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 15
+        Position: 40-54
+      - Field: 8
+        ElementName: INDIVIDUAL NAME
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 22
+        Position: 55-76
+      - Field: 9
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 10
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 11
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+    Addenda:
+      - Name: DNE ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘05’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: PAYMENT RELATED INFORMATION
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 80
+            Position: 04-83
+          - Field: 4
+            ElementName: ADDENDA SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 84-87
+          - Field: 5
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+  - Name: ENR ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 17
+        Position: 13-29
+      - Field: 6
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: 0000000000
+        Length: 10
+        Position: 30-39
+      - Field: 7
+        ElementName: IDENTIFICATION NUMBER
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 15
+        Position: 40-54
+      - Field: 8
+        ElementName: NUMBER OF ADDENDA RECORDS
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 4
+        Position: 55-58
+      - Field: 9
+        ElementName: RECEIVING COMPANY NAME/ID NUMBER
+        FieldInclusionRequirement: R
+        Contents: Alphameric
+        Length: 16
+        Position: 59-74
+      - Field: 10
+        ElementName: RESERVED
+        FieldInclusionRequirement: N/A
+        Contents: Blank
+        Length: 2
+        Position: 75-76
+      - Field: 11
+        ElementName: DISCRETIONARY DATA
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 2
+        Position: 77-78
+      - Field: 12
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 13
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+    Addenda:
+      - Name: ENR ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘05’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: PAYMENT RELATED INFORMATION
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 80
+            Position: 04-83
+          - Field: 4
+            ElementName: ADDENDA SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 84-87
+          - Field: 5
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+  - Name: IAT ENTRY DETAIL RECORD
+    Spec:
+      - Field: 1
+        ElementName: RECORD TYPE CODE
+        FieldInclusionRequirement: M
+        Contents: ‘6’
+        Length: 1
+        Position: 01-01
+      - Field: 2
+        ElementName: TRANSACTION CODE
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 2
+        Position: 02-03
+      - Field: 3
+        ElementName: GO IDENTIFICATION/ RECEIVING DFI IDENTIFICATION
+        FieldInclusionRequirement: M
+        Contents: TTTTAAAA
+        Length: 8
+        Position: 04-11
+      - Field: 4
+        ElementName: CHECK DIGIT
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 12-12
+      - Field: 5
+        ElementName: NUMBER OF ADDENDA RECORDS
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 4
+        Position: 13-16
+      - Field: 6
+        ElementName: RESERVED
+        FieldInclusionRequirement: N/A
+        Contents: Blank
+        Length: 13
+        Position: 17-29
+      - Field: 7
+        ElementName: AMOUNT
+        FieldInclusionRequirement: M
+        Contents: Dollar Amount
+        Length: 10
+        Position: 30-39
+      - Field: 8
+        ElementName: FOREIGN RECEIVER’S ACCOUNT NUMBER/ DFI ACCOUNT NUMBER
+        FieldInclusionRequirement: M
+        Contents: Alphameric
+        Length: 35
+        Position: 40-74
+      - Field: 9
+        ElementName: RESERVED
+        FieldInclusionRequirement: N/A
+        Contents: Blank
+        Length: 2
+        Position: 75-76
+      - Field: 10
+        ElementName: GATEWAY OPERATOR OFAC SCREENING INDICATOR
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 1
+        Position: 77-77
+      - Field: 11
+        ElementName: SECONDARY OFAC SCREENING INDICATOR
+        FieldInclusionRequirement: O
+        Contents: Alphameric
+        Length: 1
+        Position: 78-78
+      - Field: 12
+        ElementName: ADDENDA RECORD INDICATOR
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 1
+        Position: 79-79
+      - Field: 13
+        ElementName: TRACE NUMBER
+        FieldInclusionRequirement: M
+        Contents: Numeric
+        Length: 15
+        Position: 80-94
+    Addenda:
+      - Name: FIRST IAT ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘10’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: TRANSACTION TYPE CODE
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 3
+            Position: 04-06
+          - Field: 4
+            ElementName: FOREIGN PAYMENT AMOUNT
+            FieldInclusionRequirement: R
+            Contents: Dollar Amount
+            Length: 18
+            Position: 07-24
+          - Field: 5
+            ElementName: FOREIGN TRACE NUMBER
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 22
+            Position: 25-46
+          - Field: 6
+            ElementName: RECEIVING COMPANY NAME/INDIVIDUAL NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 47-81
+          - Field: 7
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 6
+            Position: 82-87
+          - Field: 8
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: SECOND IAT ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘11’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: ORIGINATOR NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 04-38
+          - Field: 4
+            ElementName: ORIGINATOR STREET ADDRESS
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 39-73
+          - Field: 5
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 14
+            Position: 74-87
+          - Field: 6
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: THIRD IAT ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘12’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: ORIGINATOR CITY &amp; STATE/PROVINCE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 04-38
+          - Field: 4
+            ElementName: ORIGINATOR COUNTRY &amp; POSTAL CODE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 39-73
+          - Field: 5
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 14
+            Position: 74-87
+          - Field: 6
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: FOURTH IAT ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘13’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: ORIGINATING DFI NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 04-38
+          - Field: 4
+            ElementName: ORIGINATING DFI IDENTIFICATION NUMBER QUALIFIER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 2
+            Position: 39-40
+          - Field: 5
+            ElementName: ORIGINATING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 34
+            Position: 41-74
+          - Field: 6
+            ElementName: ORIGINATING DFI BRANCH COUNTRY CODE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 3
+            Position: 75-77
+          - Field: 7
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 10
+            Position: 78-87
+          - Field: 8
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: FIFTH IAT ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘14’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 04-38
+          - Field: 4
+            ElementName: RECEIVING DFI IDENTIFICATION NUMBER QUALIFIER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 2
+            Position: 39-40
+          - Field: 5
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 34
+            Position: 41-74
+          - Field: 6
+            ElementName: RECEIVING DFI BRANCH COUNTRY CODE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 3
+            Position: 75-77
+          - Field: 7
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 10
+            Position: 78-87
+          - Field: 8
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: SIXTH IAT ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘15’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVER IDENTIFICATION NUMBER
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 15
+            Position: 04-18
+          - Field: 4
+            ElementName: RECEIVER STREET ADDRESS
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 19-53
+          - Field: 5
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 34
+            Position: 54-87
+          - Field: 6
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: SEVENTH IAT ADDENDA RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘16’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVER CITY &amp; STATE/PROVINCE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 04-38
+          - Field: 4
+            ElementName: RECEIVER COUNTRY &amp; POSTAL CODE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 39-73
+          - Field: 5
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 14
+            Position: 74-87
+          - Field: 6
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: IAT ADDENDA RECORD FOR REMITTANCE INFORMATION
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘17’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: PAYMENT RELATED INFORMATION
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 80
+            Position: 04-83
+          - Field: 4
+            ElementName: ADDENDA SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 84-87
+          - Field: 5
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: IAT ADDENDA RECORD FOR FOREIGN CORRESPONDENT BANK INFORMATION
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘7’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: ADDENDA TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘18’
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: FOREIGN CORRESPONDENT BANK NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 35
+            Position: 04-38
+          - Field: 4
+            ElementName: FOREIGN CORRESPONDENT BANK IDENTIFICATION NUMBER QUALIFIER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 2
+            Position: 39-40
+          - Field: 5
+            ElementName: FOREIGN CORRESPONDENT BANK IDENTIFICATION NUMBER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 34
+            Position: 41-74
+          - Field: 6
+            ElementName: FOREIGN CORRESPONDENT BANK BRANCH COUNTRY CODE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 3
+            Position: 75-77
+          - Field: 7
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 6
+            Position: 78-83
+          - Field: 8
+            ElementName: ADDENDA SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 84-87
+          - Field: 9
+            ElementName: ENTRY DETAIL SEQUENCE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 7
+            Position: 88-94
+
+      - Name: MTE ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: INDIVIDUAL NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: INDIVIDUAL IDENTIFICATION NUMBER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 22
+            Position: 55-76
+          - Field: 9
+            ElementName: DISCRETIONARY DATA
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 10
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 11
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+        Addenda:
+          - Name: MTE ADDENDA RECORD
+            Spec:
+              - Field: 1
+                ElementName: RECORD TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘7’
+                Length: 1
+                Position: 01-01
+              - Field: 2
+                ElementName: ADDENDA TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘02’
+                Length: 2
+                Position: 02-03
+              - Field: 3
+                ElementName: TRANSACTION DESCRIPTION
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 7
+                Position: 04-10
+              - Field: 4
+                ElementName: NETWORK IDENTIFICATION CODE
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 3
+                Position: 11-13
+              - Field: 5
+                ElementName: TERMINAL IDENTIFICATION CODE
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 6
+                Position: 14-19
+              - Field: 6
+                ElementName: TRANSACTION SERIAL NUMBER
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 6
+                Position: 20-25
+              - Field: 7
+                ElementName: TRANSACTION DATE
+                FieldInclusionRequirement: R
+                Contents: MMDD
+                Length: 4
+                Position: 26-29
+              - Field: 8
+                ElementName: TRANSACTION TIME
+                FieldInclusionRequirement: R
+                Contents: HHMMSS
+                Length: 6
+                Position: 30-35
+              - Field: 9
+                ElementName: TERMINAL LOCATION
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 27
+                Position: 36-62
+              - Field: 10
+                ElementName: TERMINAL CITY
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 15
+                Position: 63-77
+              - Field: 11
+                ElementName: TERMINAL STATE
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 2
+                Position: 78-79
+              - Field: 12
+                ElementName: TRACE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 15
+                Position: 80-94
+
+      - Name: POP ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: CHECK SERIAL NUMBER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 9
+            Position: 40-48
+          - Field: 8
+            ElementName: TERMINAL CITY
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 4
+            Position: 49-52
+          - Field: 9
+            ElementName: TERMINAL STATE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 2
+            Position: 53-54
+          - Field: 10
+            ElementName: INDIVIDUAL NAME/RECEIVING COMPANY NAME
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 22
+            Position: 55-76
+          - Field: 11
+            ElementName: DISCRETIONARY DATA
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 12
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 13
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+
+      - Name: POS ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: INDIVIDUAL IDENTIFICATION NUMBER
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: INDIVIDUAL NAME
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 22
+            Position: 55-76
+          - Field: 9
+            ElementName: CARD TRANSACTION TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 10
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 11
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+        Addenda:
+          - Name: POS ADDENDA RECORD
+            Spec:
+              - Field: 1
+                ElementName: RECORD TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘7’
+                Length: 1
+                Position: 01-01
+              - Field: 2
+                ElementName: ADDENDA TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘02’
+                Length: 2
+                Position: 02-03
+              - Field: 3
+                ElementName: REFERENCE INFORMATION #1
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 7
+                Position: 04-10
+              - Field: 4
+                ElementName: REFERENCE INFORMATION #2
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 3
+                Position: 11-13
+              - Field: 5
+                ElementName: TERMINAL IDENTIFICATION CODE
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 6
+                Position: 14-19
+              - Field: 6
+                ElementName: TRANSACTION SERIAL NUMBER
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 6
+                Position: 20-25
+              - Field: 7
+                ElementName: TRANSACTION DATE
+                FieldInclusionRequirement: R
+                Contents: MMDD
+                Length: 4
+                Position: 26-29
+              - Field: 8
+                ElementName: AUTHORIZATION CODE OR CARD EXPIRATION DATE
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 6
+                Position: 30-35
+              - Field: 9
+                ElementName: TERMINAL LOCATION
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 27
+                Position: 36-62
+              - Field: 10
+                ElementName: TERMINAL CITY
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 15
+                Position: 63-77
+              - Field: 11
+                ElementName: TERMINAL STATE
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 2
+                Position: 78-79
+              - Field: 12
+                ElementName: TRACE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 15
+                Position: 80-94
+
+      - Name: PPD ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: INDIVIDUAL IDENTIFICATION NUMBER
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: INDIVIDUAL NAME
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 22
+            Position: 55-76
+          - Field: 9
+            ElementName: DISCRETIONARY DATA
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 10
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 11
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+        Addenda:
+          - Name: PPD ADDENDA RECORD
+            Spec:
+              - Field: 1
+                ElementName: RECORD TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘7’
+                Length: 1
+                Position: 01-01
+              - Field: 2
+                ElementName: ADDENDA TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘05’
+                Length: 2
+                Position: 02-03
+              - Field: 3
+                ElementName: PAYMENT RELATED INFORMATION
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 80
+                Position: 04-83
+              - Field: 4
+                ElementName: ADDENDA SEQUENCE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 4
+                Position: 84-87
+              - Field: 5
+                ElementName: ENTRY DETAIL SEQUENCE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 7
+                Position: 88-94
+
+      - Name: RCK ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: CHECK SERIAL NUMBER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: INDIVIDUAL NAME
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 22
+            Position: 55-76
+          - Field: 9
+            ElementName: DISCRETIONARY DATA
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 10
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 11
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+
+      - Name: SHR ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: CARD EXPIRATION DATE
+            FieldInclusionRequirement: R
+            Contents: MMYY
+            Length: 4
+            Position: 40-43
+          - Field: 8
+            ElementName: DOCUMENT REFERENCE NUMBER
+            FieldInclusionRequirement: R
+            Contents: Numeric
+            Length: 11
+            Position: 44-54
+          - Field: 9
+            ElementName: INDIVIDUAL CARD ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Numeric
+            Length: 22
+            Position: 55-76
+          - Field: 10
+            ElementName: CARD TRANSACTION TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 77-78
+          - Field: 11
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 12
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+        Addenda:
+          - Name: SHR ADDENDA RECORD
+            Spec:
+              - Field: 1
+                ElementName: RECORD TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘7’
+                Length: 1
+                Position: 01-01
+              - Field: 2
+                ElementName: ADDENDA TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘02’
+                Length: 2
+                Position: 02-03
+              - Field: 3
+                ElementName: REFERENCE INFORMATION #1
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 7
+                Position: 04-10
+              - Field: 4
+                ElementName: REFERENCE INFORMATION #2
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 3
+                Position: 11-13
+              - Field: 5
+                ElementName: TERMINAL IDENTIFICATION CODE
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 6
+                Position: 14-19
+              - Field: 6
+                ElementName: TRANSACTION SERIAL NUMBER
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 6
+                Position: 20-25
+              - Field: 7
+                ElementName: TRANSACTION DATE
+                FieldInclusionRequirement: R
+                Contents: MMDD
+                Length: 4
+                Position: 26-29
+              - Field: 8
+                ElementName: AUTHORIZATION CODE OR CARD EXPIRATION DATE
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 6
+                Position: 30-35
+              - Field: 9
+                ElementName: TERMINAL LOCATION
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 27
+                Position: 36-62
+              - Field: 10
+                ElementName: TERMINAL CITY
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 15
+                Position: 63-77
+              - Field: 11
+                ElementName: TERMINAL STATE
+                FieldInclusionRequirement: R
+                Contents: Alphameric
+                Length: 2
+                Position: 78-79
+              - Field: 12
+                ElementName: TRACE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 15
+                Position: 80-94
+
+      - Name: TEL ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: INDIVIDUAL IDENTIFICATION NUMBER
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: INDIVIDUAL NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 22
+            Position: 55-76
+          - Field: 9
+            ElementName: PAYMENT TYPE CODE
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 10
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 11
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+
+      - Name: TRC ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: CHECK SERIAL NUMBER
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: PROCESS CONTROL FIELD
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 6
+            Position: 55-60
+          - Field: 9
+            ElementName: ITEM RESEARCH NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 16
+            Position: 61-76
+          - Field: 10
+            ElementName: ITEM TYPE INDICATOR
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 11
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 12
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+
+      - Name: TRX ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: TOTAL AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: IDENTIFICATION NUMBER
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: NUMBER OF ADDENDA RECORDS
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 4
+            Position: 55-58
+          - Field: 9
+            ElementName: RECEIVING COMPANY NAME/ID NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 16
+            Position: 59-74
+          - Field: 10
+            ElementName: RESERVED
+            FieldInclusionRequirement: N/A
+            Contents: Blank
+            Length: 2
+            Position: 75-76
+          - Field: 11
+            ElementName: ITEM TYPE INDICATOR
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 12
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 13
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+        Addenda:
+          - Name: TRX ADDENDA RECORD
+            Spec:
+              - Field: 1
+                ElementName: RECORD TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘7’
+                Length: 1
+                Position: 01-01
+              - Field: 2
+                ElementName: ADDENDA TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘05’
+                Length: 2
+                Position: 02-03
+              - Field: 3
+                ElementName: PAYMENT RELATED INFORMATION
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 80
+                Position: 04-83
+              - Field: 4
+                ElementName: ADDENDA SEQUENCE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 4
+                Position: 84-87
+              - Field: 5
+                ElementName: ENTRY DETAIL SEQUENCE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 7
+                Position: 88-94
+
+      - Name: WEB ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: INDIVIDUAL IDENTIFICATION NUMBER1
+            FieldInclusionRequirement: O/R
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: INDIVIDUAL NAME
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 22
+            Position: 55-76
+          - Field: 9
+            ElementName: PAYMENT TYPE CODE
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 10
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 11
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
+        Addenda:
+          - Name: WEB ADDENDA RECORD
+            Spec:
+              - Field: 1
+                ElementName: RECORD TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘7’
+                Length: 1
+                Position: 01-01
+              - Field: 2
+                ElementName: ADDENDA TYPE CODE
+                FieldInclusionRequirement: M
+                Contents: ‘05’
+                Length: 2
+                Position: 02-03
+              - Field: 3
+                ElementName: PAYMENT RELATED INFORMATION
+                FieldInclusionRequirement: O
+                Contents: Alphameric
+                Length: 80
+                Position: 04-83
+              - Field: 4
+                ElementName: ADDENDA SEQUENCE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 4
+                Position: 84-87
+              - Field: 5
+                ElementName: ENTRY DETAIL SEQUENCE NUMBER
+                FieldInclusionRequirement: M
+                Contents: Numeric
+                Length: 7
+                Position: 88-94
+
+      - Name: XCK ENTRY DETAIL RECORD
+        Spec:
+          - Field: 1
+            ElementName: RECORD TYPE CODE
+            FieldInclusionRequirement: M
+            Contents: ‘6’
+            Length: 1
+            Position: 01-01
+          - Field: 2
+            ElementName: TRANSACTION CODE
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 2
+            Position: 02-03
+          - Field: 3
+            ElementName: RECEIVING DFI IDENTIFICATION
+            FieldInclusionRequirement: M
+            Contents: TTTTAAAA
+            Length: 8
+            Position: 04-11
+          - Field: 4
+            ElementName: CHECK DIGIT
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 12-12
+          - Field: 5
+            ElementName: DFI ACCOUNT NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 17
+            Position: 13-29
+          - Field: 6
+            ElementName: AMOUNT
+            FieldInclusionRequirement: M
+            Contents: Dollar Amount
+            Length: 10
+            Position: 30-39
+          - Field: 7
+            ElementName: CHECK SERIAL NUMBER
+            FieldInclusionRequirement: M
+            Contents: Alphameric
+            Length: 15
+            Position: 40-54
+          - Field: 8
+            ElementName: PROCESS CONTROL FIELD
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 6
+            Position: 55-60
+          - Field: 9
+            ElementName: ITEM RESEARCH NUMBER
+            FieldInclusionRequirement: R
+            Contents: Alphameric
+            Length: 16
+            Position: 61-76
+          - Field: 10
+            ElementName: DISCRETIONARY DATA
+            FieldInclusionRequirement: O
+            Contents: Alphameric
+            Length: 2
+            Position: 77-78
+          - Field: 11
+            ElementName: ADDENDA RECORD INDICATOR
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 1
+            Position: 79-79
+          - Field: 12
+            ElementName: TRACE NUMBER
+            FieldInclusionRequirement: M
+            Contents: Numeric
+            Length: 15
+            Position: 80-94
