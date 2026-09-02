@@ -12,16 +12,16 @@ jobs:
 
     steps:
       - name: Setup repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2.8.0
 
-      - uses: straw-hat-team/github-actions-workflows/asdf/get-version@master
+      - uses: straw-hat-team/github-actions-workflows/asdf/get-version@d1b2f6ff4e137477066efab546f50ac66664faaf # master
         id: deno-version
         name: Get Deno version from .tool-versions
         with:
           plugin-name: deno
 
       - name: Setup Deno
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@11b63cf76cfcafb4e43f97b6cad24d8e8438f62d # v1.5.2
         with:
           deno-version: v${{ steps.deno-version.outputs.plugin-version }}
 
