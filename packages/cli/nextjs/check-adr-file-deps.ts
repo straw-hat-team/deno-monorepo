@@ -1,5 +1,10 @@
 import { Args } from "https://deno.land/std/flags/mod.ts";
-import { basename, extname, dirname, relative } from "https://deno.land/std/path/mod.ts";
+import {
+  basename,
+  dirname,
+  extname,
+  relative,
+} from "https://deno.land/std/path/mod.ts";
 import * as log from "https://deno.land/std/log/mod.ts";
 import { getArg, runMain } from "../mod.ts";
 
@@ -44,18 +49,20 @@ function findCommonRootPath(filePath1: string, filePath2: string) {
 function isProperlyColocated(commonRoot: string, dependency: string) {
   const relativeDependency = relative(commonRoot, dependency);
 
-  if (relativeDependency === '' || relativeDependency.startsWith('..')) {
+  if (relativeDependency === "" || relativeDependency.startsWith("..")) {
     return false;
   }
 
   // Check if the first directory in the relative path starts with '_'
-  const firstDependencyDir = relativeDependency.split('/')[0];
-  return firstDependencyDir.startsWith('_');
+  const firstDependencyDir = relativeDependency.split("/")[0];
+  return firstDependencyDir.startsWith("_");
 }
 
 async function main(args: Args) {
   const jsonFile = getArg(args, "dependency-cruiser-file");
-  const dependencyData = JSON.parse(Deno.readTextFileSync(jsonFile)) as DepsFile;
+  const dependencyData = JSON.parse(
+    Deno.readTextFileSync(jsonFile),
+  ) as DepsFile;
 
   for (const module of dependencyData.modules) {
     const moduleInfo = getFileInfo(module.source);
@@ -68,11 +75,18 @@ async function main(args: Args) {
           log.error(`${module.source} imports ${dependency.resolved}`);
         }
 
-        const commonRoot = findCommonRootPath(moduleInfo.directory, depsInfo.directory);
+        const commonRoot = findCommonRootPath(
+          moduleInfo.directory,
+          depsInfo.directory,
+        );
 
         if (!isProperlyColocated(commonRoot, dependency.resolved)) {
-          log.error(`Route import violation: ${module.source} imports ${dependency.resolved}`);
-          log.error(`  These files are not properly colocated in a common parent directory.`);
+          log.error(
+            `Route import violation: ${module.source} imports ${dependency.resolved}`,
+          );
+          log.error(
+            `  These files are not properly colocated in a common parent directory.`,
+          );
           log.error(`  Common root path: ${commonRoot}`);
         }
       }
