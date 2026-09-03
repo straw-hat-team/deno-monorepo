@@ -6,9 +6,8 @@ async function main(args: Args) {
   const namespace = getArg(args, "namespace", { required: false }) ??
     "platform";
 
-  await Deno.run({
-    cmd: [
-      "kubectl",
+  await new Deno.Command("kubectl", {
+    args: [
       "exec",
       `--context=${context}`,
       `--namespace=${namespace}`,
@@ -20,7 +19,7 @@ async function main(args: Args) {
       "operator",
       "init",
     ],
-  }).status();
+  }).spawn().status;
 }
 
 await runMain(main);

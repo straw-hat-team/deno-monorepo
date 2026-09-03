@@ -14,9 +14,8 @@ async function main(args: Args) {
 
   for (let i = 0; i < instances; i++) {
     for (const key of keys) {
-      await Deno.run({
-        cmd: [
-          "kubectl",
+      await new Deno.Command("kubectl", {
+        args: [
           "exec",
           `--context=${context}`,
           `--namespace=${namespace}`,
@@ -29,7 +28,7 @@ async function main(args: Args) {
           "unseal",
           key,
         ],
-      }).status();
+      }).spawn().status;
     }
   }
 }

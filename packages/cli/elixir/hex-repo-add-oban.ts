@@ -8,9 +8,8 @@ import { fetchEnv } from "../../system/environment.ts";
 async function main(_args: Args) {
   const fingerprint = fetchEnv("SHT_OBAN_KEY_FINGERPRINT");
   const authKey = fetchEnv("SHT_OBAN_LICENSE_KEY");
-  const process = Deno.run({
-    cmd: [
-      "mix",
+  const command = new Deno.Command("mix", {
+    args: [
       "hex.repo",
       "add",
       "oban",
@@ -21,7 +20,7 @@ async function main(_args: Args) {
       authKey,
     ],
   });
-  const status = await process.status();
+  const status = await command.spawn().status;
   return status.code;
 }
 

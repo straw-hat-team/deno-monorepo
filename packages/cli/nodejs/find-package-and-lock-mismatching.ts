@@ -26,25 +26,25 @@ type NpmList = {
 async function main(args: Args) {
   const packageFile = getArg(args, "package-json-file");
   const module = await import(packageFile, {
-    assert: { type: "json" },
+    with: { type: "json" },
   });
 
   log.info(`Checking ${packageFile}`);
 
-  const pid = Deno.run({
+  const command = new Deno.Command("npm", {
     cwd: path.parse(packageFile).dir,
-    cmd: [
-      "npm",
+    args: [
       "list",
       "--json",
     ],
     stdout: "piped",
+    stderr: "inherit",
   });
 
-  const output = await pid.output();
-  const npmList = JSON.parse(new TextDecoder().decode(output)) as NpmList;
+  const { stdout } = await command.output();
+  const npmList = JSON.parse(new TextDecoder().decode(stdout)) as NpmList;
 
-  ["dependencies", "devDependencies", "peerDependencies"].forEach(
+  (["dependencies", "devDependencies", "peerDependencies"] as Scope[]).forEach(
     checkDependencies(module.default, npmList),
   );
 }
