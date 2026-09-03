@@ -1,0 +1,4002 @@
+<div>
+  <h2>FILE HEADER RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>PRIORITY CODE</td>
+        <td>IMMEDIATE DESTINATION</td>
+        <td>IMMEDIATE ORIGIN</td>
+        <td>FILE CREATION DATE</td>
+        <td>FILE CREATION TIME</td>
+        <td>FILE ID MODIFIER</td>
+        <td>RECORD SIZE</td>
+        <td>BLOCKING FACTOR</td>
+        <td>FORMAT CODE</td>
+        <td>IMMEDIATE DESTINATION NAME</td>
+        <td>IMMEDIATE ORIGIN NAME</td>
+        <td>REFERENCE CODE</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>O</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘1’</td>
+        <td>Numeric</td>
+        <td>bTTTTAAAAC</td>
+        <td>bTTTTAAAAC</td>
+        <td>YYMMDD</td>
+        <td>HHMM</td>
+        <td>UPPER CASE A-Z NUMERIC 0-9</td>
+        <td>‘094’</td>
+        <td>‘10’</td>
+        <td>‘1’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>10</td>
+        <td>10</td>
+        <td>6</td>
+        <td>4</td>
+        <td>1</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+        <td>23</td>
+        <td>23</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-13</td>
+        <td>14-23</td>
+        <td>24-29</td>
+        <td>30-33</td>
+        <td>34-34</td>
+        <td>35-37</td>
+        <td>38-39</td>
+        <td>40-40</td>
+        <td>41-63</td>
+        <td>64-86</td>
+        <td>87-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>FILE CONTROL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>BATCH COUNT</td>
+        <td>BLOCK COUNT</td>
+        <td>ENTRY/ADDENDA COUNT</td>
+        <td>ENTRY HASH</td>
+        <td>TOTAL DEBIT ENTRY DOLLAR AMOUNT IN FILE</td>
+        <td>TOTAL CREDIT ENTRY DOLLAR AMOUNT IN FILE</td>
+        <td>RESERVED</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘9’</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Dollar Amount</td>
+        <td>Dollar Amount</td>
+        <td>Blank</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>6</td>
+        <td>6</td>
+        <td>8</td>
+        <td>10</td>
+        <td>12</td>
+        <td>12</td>
+        <td>39</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-07</td>
+        <td>08-13</td>
+        <td>14-21</td>
+        <td>22-31</td>
+        <td>32-43</td>
+        <td>44-55</td>
+        <td>56-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>COMPANY/BATCH HEADER RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>SERVICE CLASS CODE</td>
+        <td>COMPANY NAME</td>
+        <td>COMPANY DISCRETIONARY DATA</td>
+        <td>COMPANY IDENTIFICATION</td>
+        <td>STANDARD ENTRY CLASS CODE</td>
+        <td>COMPANY ENTRY DESCRIPTION</td>
+        <td>COMPANY DESCRIPTIVE DATE</td>
+        <td>EFFECTIVE ENTRY DATE</td>
+        <td>SETTLEMENT DATE (JULIAN)</td>
+        <td>ORIGINATOR STATUS CODE</td>
+        <td>ORIGINATING DFI IDENTIFICATION</td>
+        <td>BATCH NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>R</td>
+        <td>Inserted by ACH Operator</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘5’</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>YYMMDD</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>3</td>
+        <td>16</td>
+        <td>20</td>
+        <td>10</td>
+        <td>3</td>
+        <td>10</td>
+        <td>6</td>
+        <td>6</td>
+        <td>3</td>
+        <td>1</td>
+        <td>8</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-04</td>
+        <td>05-20</td>
+        <td>21-40</td>
+        <td>41-50</td>
+        <td>51-53</td>
+        <td>54-63</td>
+        <td>64-69</td>
+        <td>70-75</td>
+        <td>76-78</td>
+        <td>79-79</td>
+        <td>80-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>COMPANY/BATCH CONTROL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>SERVICE CLASS CODE</td>
+        <td>ENTRY/ ADDENDA COUNT</td>
+        <td>ENTRY HASH</td>
+        <td>TOTAL DEBIT ENTRY DOLLAR AMOUNT</td>
+        <td>TOTAL CREDIT ENTRY DOLLAR AMOUNT</td>
+        <td>COMPANY IDENTIFICATION</td>
+        <td>MESSAGE AUTHENTICATION CODE</td>
+        <td>RESERVED</td>
+        <td>ORIGINATING DFI IDENTIFICATION</td>
+        <td>BATCH NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>O</td>
+        <td>N/A</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘8’</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Dollar Amount</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>3</td>
+        <td>6</td>
+        <td>10</td>
+        <td>12</td>
+        <td>12</td>
+        <td>10</td>
+        <td>19</td>
+        <td>6</td>
+        <td>8</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-04</td>
+        <td>05-10</td>
+        <td>11-20</td>
+        <td>21-32</td>
+        <td>33-44</td>
+        <td>45-54</td>
+        <td>55-73</td>
+        <td>74-79</td>
+        <td>80-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>IAT COMPANY/BATCH HEADER RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>SERVICE CLASS CODE</td>
+        <td>IAT INDICATOR</td>
+        <td>FOREIGN EXCHANGE INDICATOR</td>
+        <td>FOREIGN EXCHANGE REFERENCE INDICATOR</td>
+        <td>FOREIGN EXCHANGE REFERENCE</td>
+        <td>ISO DESTINATION COUNTRY CODE</td>
+        <td>ORIGINATOR IDENTIFICATION</td>
+        <td>STANDARD ENTRY CLASS CODE</td>
+        <td>COMPANY ENTRY DESCRIPTION</td>
+        <td>ISO ORIGINATING CURRENCY CODE</td>
+        <td>ISO DESTINATION CURRENCY CODE</td>
+        <td>EFFECTIVE ENTRY DATE</td>
+        <td>SETTLEMENT DATE (JULIAN)</td>
+        <td>ORIGINATOR STATUS CODE</td>
+        <td>GO IDENTIFICATION/ ORIGINATING DFI IDENTIFICATION</td>
+        <td>BATCH NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>R</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>Inserted by ACH Operator</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘5’</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>YYMMDD</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>3</td>
+        <td>16</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+        <td>2</td>
+        <td>10</td>
+        <td>3</td>
+        <td>10</td>
+        <td>3</td>
+        <td>3</td>
+        <td>6</td>
+        <td>3</td>
+        <td>1</td>
+        <td>8</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-04</td>
+        <td>05-20</td>
+        <td>21-22</td>
+        <td>23-23</td>
+        <td>24-38</td>
+        <td>39-40</td>
+        <td>41-50</td>
+        <td>51-53</td>
+        <td>54-63</td>
+        <td>64-66</td>
+        <td>67-69</td>
+        <td>70-75</td>
+        <td>76-78</td>
+        <td>79-79</td>
+        <td>80-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>ADV FILE HEADER RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>PRIORITY CODE</td>
+        <td>IMMEDIATE DESTINATION</td>
+        <td>IMMEDIATE ORIGIN</td>
+        <td>FILE CREATION DATE</td>
+        <td>FILE CREATION TIME</td>
+        <td>FILE ID MODIFIER</td>
+        <td>RECORD SIZE</td>
+        <td>BLOCKING FACTOR</td>
+        <td>FORMAT CODE</td>
+        <td>IMMEDIATE DESTINATION NAME</td>
+        <td>IMMEDIATE ORIGIN NAME</td>
+        <td>REFERENCE CODE</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘1’</td>
+        <td>Numeric</td>
+        <td>bTTTTAAAAC</td>
+        <td>bTTTTAAAAC</td>
+        <td>YYMMDD</td>
+        <td>HHMM</td>
+        <td>UPPER CASE A-Z NUMERIC 0-9</td>
+        <td>‘094’</td>
+        <td>‘10’</td>
+        <td>‘1’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>10</td>
+        <td>10</td>
+        <td>6</td>
+        <td>4</td>
+        <td>1</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+        <td>23</td>
+        <td>23</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-13</td>
+        <td>14-23</td>
+        <td>24-29</td>
+        <td>30-33</td>
+        <td>34-34</td>
+        <td>35-37</td>
+        <td>38-39</td>
+        <td>40-40</td>
+        <td>41-63</td>
+        <td>64-86</td>
+        <td>87-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>ADV FILE CONTROL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>BATCH COUNT</td>
+        <td>BLOCK COUNT</td>
+        <td>ENTRY/ADDENDA COUNT</td>
+        <td>ENTRY HASH</td>
+        <td>TOTAL DEBIT ENTRY DOLLAR AMOUNT IN FILE</td>
+        <td>TOTAL CREDIT ENTRY DOLLAR AMOUNT IN FILE</td>
+        <td>RESERVED</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘9’</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Dollar Amount</td>
+        <td>Dollar Amount</td>
+        <td>Blank</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>6</td>
+        <td>6</td>
+        <td>8</td>
+        <td>10</td>
+        <td>20</td>
+        <td>20</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-07</td>
+        <td>08-13</td>
+        <td>14-21</td>
+        <td>22-31</td>
+        <td>32-51</td>
+        <td>52-71</td>
+        <td>72-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>ADV COMPANY/BATCH CONTROL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>SERVICE CLASS CODE</td>
+        <td>ENTRY/ADDENDA COUNT</td>
+        <td>ENTRY HASH</td>
+        <td>TOTAL DEBIT ENTRY DOLLAR AMOUNT</td>
+        <td>TOTAL CREDIT ENTRY DOLLAR AMOUNT</td>
+        <td>ACH OPERATOR DATA</td>
+        <td>ORIGINATING DFI IDENTIFICATION</td>
+        <td>BATCH NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘8’</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Dollar Amount</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>3</td>
+        <td>6</td>
+        <td>10</td>
+        <td>20</td>
+        <td>20</td>
+        <td>19</td>
+        <td>8</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-04</td>
+        <td>05-10</td>
+        <td>11-20</td>
+        <td>21-40</td>
+        <td>41-60</td>
+        <td>61-79</td>
+        <td>80-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>ADV ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>ADVICE ROUTING NUMBER</td>
+        <td>FILE IDENTIFICATION</td>
+        <td>ACH OPERATOR DATA</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>ROUTING NUMBER OF ACH OPERATOR</td>
+        <td>JULIAN DATE ON WHICH THIS ADVICE IS CREATED</td>
+        <td>SEQUENCE NUMBER WITHIN BATCH</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>O</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>15</td>
+        <td>12</td>
+        <td>9</td>
+        <td>5</td>
+        <td>1</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>8</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-27</td>
+        <td>28-39</td>
+        <td>40-48</td>
+        <td>49-53</td>
+        <td>54-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-87</td>
+        <td>88-90</td>
+        <td>91-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>ARC ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>CHECK SERIAL NUMBER</td>
+        <td>INDIVIDUAL NAME/RECEIVING COMPANY NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>BOC ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>CHECK SERIAL NUMBER</td>
+        <td>INDIVIDUAL NAME/RECEIVING COMPANY NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>CCD ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>IDENTIFICATION NUMBER</td>
+        <td>RECEIVING COMPANY NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>CCD ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>CIE ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>INDIVIDUAL IDENTIFICATION NUMBER</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>CIE ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>CTX CORPORATE ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>TOTAL AMOUNT</td>
+        <td>IDENTIFICATION NUMBER</td>
+        <td>NUMBER OF ADDENDA RECORDS</td>
+        <td>RECEIVING COMPANY NAME/ID NUMBER</td>
+        <td>RESERVED</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>R</td>
+        <td>N/A</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>4</td>
+        <td>16</td>
+        <td>2</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-58</td>
+        <td>59-74</td>
+        <td>75-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>CTX ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>DNE ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>INDIVIDUAL IDENTIFICATION NUMBER</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>DNE ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>ENR ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>IDENTIFICATION NUMBER</td>
+        <td>NUMBER OF ADDENDA RECORDS</td>
+        <td>RECEIVING COMPANY NAME/ID NUMBER</td>
+        <td>RESERVED</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>R</td>
+        <td>N/A</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>0000000000</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>4</td>
+        <td>16</td>
+        <td>2</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-58</td>
+        <td>59-74</td>
+        <td>75-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>ENR ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>IAT ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>GO IDENTIFICATION/ RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>NUMBER OF ADDENDA RECORDS</td>
+        <td>RESERVED</td>
+        <td>AMOUNT</td>
+        <td>FOREIGN RECEIVER’S ACCOUNT NUMBER/ DFI ACCOUNT NUMBER</td>
+        <td>RESERVED</td>
+        <td>GATEWAY OPERATOR OFAC SCREENING INDICATOR</td>
+        <td>SECONDARY OFAC SCREENING INDICATOR</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>O</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Blank</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>4</td>
+        <td>13</td>
+        <td>10</td>
+        <td>35</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-16</td>
+        <td>17-29</td>
+        <td>30-39</td>
+        <td>40-74</td>
+        <td>75-76</td>
+        <td>77-77</td>
+        <td>78-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>FIRST IAT ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>TRANSACTION TYPE CODE</td>
+        <td>FOREIGN PAYMENT AMOUNT</td>
+        <td>FOREIGN TRACE NUMBER</td>
+        <td>RECEIVING COMPANY NAME/INDIVIDUAL NAME</td>
+        <td>RESERVED</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘10’</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>18</td>
+        <td>22</td>
+        <td>35</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-06</td>
+        <td>07-24</td>
+        <td>25-46</td>
+        <td>47-81</td>
+        <td>82-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>SECOND IAT ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>ORIGINATOR NAME</td>
+        <td>ORIGINATOR STREET ADDRESS</td>
+        <td>RESERVED</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘11’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>35</td>
+        <td>35</td>
+        <td>14</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-38</td>
+        <td>39-73</td>
+        <td>74-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>THIRD IAT ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>ORIGINATOR CITY &amp; STATE/PROVINCE</td>
+        <td>ORIGINATOR COUNTRY &amp; POSTAL CODE</td>
+        <td>RESERVED</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘12’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>35</td>
+        <td>35</td>
+        <td>14</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-38</td>
+        <td>39-73</td>
+        <td>74-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>FOURTH IAT ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>ORIGINATING DFI NAME</td>
+        <td>ORIGINATING DFI IDENTIFICATION NUMBER QUALIFIER</td>
+        <td>ORIGINATING DFI IDENTIFICATION</td>
+        <td>ORIGINATING DFI BRANCH COUNTRY CODE</td>
+        <td>RESERVED</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘13’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>35</td>
+        <td>2</td>
+        <td>34</td>
+        <td>3</td>
+        <td>10</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-38</td>
+        <td>39-40</td>
+        <td>41-74</td>
+        <td>75-77</td>
+        <td>78-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>FIFTH IAT ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>RECEIVING DFI NAME</td>
+        <td>RECEIVING DFI IDENTIFICATION NUMBER QUALIFIER</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>RECEIVING DFI BRANCH COUNTRY CODE</td>
+        <td>RESERVED</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘14’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>35</td>
+        <td>2</td>
+        <td>34</td>
+        <td>3</td>
+        <td>10</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-38</td>
+        <td>39-40</td>
+        <td>41-74</td>
+        <td>75-77</td>
+        <td>78-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>SIXTH IAT ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>RECEIVER IDENTIFICATION NUMBER</td>
+        <td>RECEIVER STREET ADDRESS</td>
+        <td>RESERVED</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘15’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>15</td>
+        <td>35</td>
+        <td>34</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-18</td>
+        <td>19-53</td>
+        <td>54-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>SEVENTH IAT ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>RECEIVER CITY &amp; STATE/PROVINCE</td>
+        <td>RECEIVER COUNTRY &amp; POSTAL CODE</td>
+        <td>RESERVED</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘16’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>35</td>
+        <td>35</td>
+        <td>14</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-38</td>
+        <td>39-73</td>
+        <td>74-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>IAT ADDENDA RECORD FOR REMITTANCE INFORMATION</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘17’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>IAT ADDENDA RECORD FOR FOREIGN CORRESPONDENT BANK INFORMATION</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>FOREIGN CORRESPONDENT BANK NAME</td>
+        <td>FOREIGN CORRESPONDENT BANK IDENTIFICATION NUMBER QUALIFIER</td>
+        <td>FOREIGN CORRESPONDENT BANK IDENTIFICATION NUMBER</td>
+        <td>FOREIGN CORRESPONDENT BANK BRANCH COUNTRY CODE</td>
+        <td>RESERVED</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>N/A</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘18’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>35</td>
+        <td>2</td>
+        <td>34</td>
+        <td>3</td>
+        <td>6</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-38</td>
+        <td>39-40</td>
+        <td>41-74</td>
+        <td>75-77</td>
+        <td>78-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>MTE ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>INDIVIDUAL IDENTIFICATION NUMBER</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>MTE ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>TRANSACTION DESCRIPTION</td>
+        <td>NETWORK IDENTIFICATION CODE</td>
+        <td>TERMINAL IDENTIFICATION CODE</td>
+        <td>TRANSACTION SERIAL NUMBER</td>
+        <td>TRANSACTION DATE</td>
+        <td>TRANSACTION TIME</td>
+        <td>TERMINAL LOCATION</td>
+        <td>TERMINAL CITY</td>
+        <td>TERMINAL STATE</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>O</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘02’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>MMDD</td>
+        <td>HHMMSS</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>7</td>
+        <td>3</td>
+        <td>6</td>
+        <td>6</td>
+        <td>4</td>
+        <td>6</td>
+        <td>27</td>
+        <td>15</td>
+        <td>2</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-10</td>
+        <td>11-13</td>
+        <td>14-19</td>
+        <td>20-25</td>
+        <td>26-29</td>
+        <td>30-35</td>
+        <td>36-62</td>
+        <td>63-77</td>
+        <td>78-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>POP ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>CHECK SERIAL NUMBER</td>
+        <td>TERMINAL CITY</td>
+        <td>TERMINAL STATE</td>
+        <td>INDIVIDUAL NAME/RECEIVING COMPANY NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>9</td>
+        <td>4</td>
+        <td>2</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-48</td>
+        <td>49-52</td>
+        <td>53-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>POS ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>INDIVIDUAL IDENTIFICATION NUMBER</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>CARD TRANSACTION TYPE CODE</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>POS ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>REFERENCE INFORMATION #1</td>
+        <td>REFERENCE INFORMATION #2</td>
+        <td>TERMINAL IDENTIFICATION CODE</td>
+        <td>TRANSACTION SERIAL NUMBER</td>
+        <td>TRANSACTION DATE</td>
+        <td>AUTHORIZATION CODE OR CARD EXPIRATION DATE</td>
+        <td>TERMINAL LOCATION</td>
+        <td>TERMINAL CITY</td>
+        <td>TERMINAL STATE</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>O</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>O</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘02’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>MMDD</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>7</td>
+        <td>3</td>
+        <td>6</td>
+        <td>6</td>
+        <td>4</td>
+        <td>6</td>
+        <td>27</td>
+        <td>15</td>
+        <td>2</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-10</td>
+        <td>11-13</td>
+        <td>14-19</td>
+        <td>20-25</td>
+        <td>26-29</td>
+        <td>30-35</td>
+        <td>36-62</td>
+        <td>63-77</td>
+        <td>78-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>PPD ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>INDIVIDUAL IDENTIFICATION NUMBER</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>PPD ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>RCK ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>CHECK SERIAL NUMBER</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>SHR ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>CARD EXPIRATION DATE</td>
+        <td>DOCUMENT REFERENCE NUMBER</td>
+        <td>INDIVIDUAL CARD ACCOUNT NUMBER</td>
+        <td>CARD TRANSACTION TYPE CODE</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>MMYY</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>4</td>
+        <td>11</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-43</td>
+        <td>44-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>SHR ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>REFERENCE INFORMATION #1</td>
+        <td>REFERENCE INFORMATION #2</td>
+        <td>TERMINAL IDENTIFICATION CODE</td>
+        <td>TRANSACTION SERIAL NUMBER</td>
+        <td>TRANSACTION DATE</td>
+        <td>AUTHORIZATION CODE OR CARD EXPIRATION DATE</td>
+        <td>TERMINAL LOCATION</td>
+        <td>TERMINAL CITY</td>
+        <td>TERMINAL STATE</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>O</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>O</td>
+        <td>R</td>
+        <td>R</td>
+        <td>R</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘02’</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>MMDD</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>7</td>
+        <td>3</td>
+        <td>6</td>
+        <td>6</td>
+        <td>4</td>
+        <td>6</td>
+        <td>27</td>
+        <td>15</td>
+        <td>2</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-10</td>
+        <td>11-13</td>
+        <td>14-19</td>
+        <td>20-25</td>
+        <td>26-29</td>
+        <td>30-35</td>
+        <td>36-62</td>
+        <td>63-77</td>
+        <td>78-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>TEL ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>INDIVIDUAL IDENTIFICATION NUMBER</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>PAYMENT TYPE CODE</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>TRC ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>CHECK SERIAL NUMBER</td>
+        <td>PROCESS CONTROL FIELD</td>
+        <td>ITEM RESEARCH NUMBER</td>
+        <td>ITEM TYPE INDICATOR</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>R</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>6</td>
+        <td>16</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-60</td>
+        <td>61-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>TRX ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>TOTAL AMOUNT</td>
+        <td>IDENTIFICATION NUMBER</td>
+        <td>NUMBER OF ADDENDA RECORDS</td>
+        <td>RECEIVING COMPANY NAME/ID NUMBER</td>
+        <td>RESERVED</td>
+        <td>ITEM TYPE INDICATOR</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>R</td>
+        <td>N/A</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Blank</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>4</td>
+        <td>16</td>
+        <td>2</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-58</td>
+        <td>59-74</td>
+        <td>75-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>TRX ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>WEB ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>INDIVIDUAL IDENTIFICATION NUMBER1</td>
+        <td>INDIVIDUAL NAME</td>
+        <td>PAYMENT TYPE CODE</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>O/R</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>22</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>WEB ADDENDA RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>ADDENDA TYPE CODE</td>
+        <td>PAYMENT RELATED INFORMATION</td>
+        <td>ADDENDA SEQUENCE NUMBER</td>
+        <td>ENTRY DETAIL SEQUENCE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘7’</td>
+        <td>‘05’</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>80</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-83</td>
+        <td>84-87</td>
+        <td>88-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h2>XCK ENTRY DETAIL RECORD</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Field</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>ElementName</td>
+        <td>RECORD TYPE CODE</td>
+        <td>TRANSACTION CODE</td>
+        <td>RECEIVING DFI IDENTIFICATION</td>
+        <td>CHECK DIGIT</td>
+        <td>DFI ACCOUNT NUMBER</td>
+        <td>AMOUNT</td>
+        <td>CHECK SERIAL NUMBER</td>
+        <td>PROCESS CONTROL FIELD</td>
+        <td>ITEM RESEARCH NUMBER</td>
+        <td>DISCRETIONARY DATA</td>
+        <td>ADDENDA RECORD INDICATOR</td>
+        <td>TRACE NUMBER</td>
+      </tr>
+      <tr>
+        <td>FieldInclusionRequirement</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>M</td>
+        <td>M</td>
+        <td>R</td>
+        <td>R</td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+      </tr>
+      <tr>
+        <td>Contents</td>
+        <td>‘6’</td>
+        <td>Numeric</td>
+        <td>TTTTAAAA</td>
+        <td>Numeric</td>
+        <td>Alphameric</td>
+        <td>Dollar Amount</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Alphameric</td>
+        <td>Numeric</td>
+        <td>Numeric</td>
+      </tr>
+      <tr>
+        <td>Length</td>
+        <td>1</td>
+        <td>2</td>
+        <td>8</td>
+        <td>1</td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td>6</td>
+        <td>16</td>
+        <td>2</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>01-01</td>
+        <td>02-03</td>
+        <td>04-11</td>
+        <td>12-12</td>
+        <td>13-29</td>
+        <td>30-39</td>
+        <td>40-54</td>
+        <td>55-60</td>
+        <td>61-76</td>
+        <td>77-78</td>
+        <td>79-79</td>
+        <td>80-94</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
