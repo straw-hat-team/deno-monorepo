@@ -61,7 +61,7 @@ function isProperlyColocated(commonRoot: string, dependency: string) {
 async function main(args: Args) {
   const jsonFile = getArg(args, "dependency-cruiser-file");
   const dependencyData = JSON.parse(
-    Deno.readTextFileSync(jsonFile),
+    await Deno.readTextFile(jsonFile),
   ) as DepsFile;
 
   for (const module of dependencyData.modules) {
