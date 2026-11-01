@@ -23,11 +23,11 @@ async function main(args: Args) {
   );
 
   const tasks = response.map(async (repo) => {
-    const process = Deno.run({
-      cmd: ["git", "clone", repo.clone_url],
+    const command = new Deno.Command("git", {
+      args: ["clone", repo.clone_url],
       cwd: outputDir,
     });
-    await process.status();
+    await command.spawn().status;
   });
 
   return Promise.all(tasks);

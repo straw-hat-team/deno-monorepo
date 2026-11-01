@@ -23,16 +23,15 @@ async function main(args: Args) {
 
     log.info(`Creating symlink from ${filePath} to ${destFilePath}`);
 
-    const pid = Deno.run({
-      cmd: [
-        "ln",
+    const command = new Deno.Command("ln", {
+      args: [
         "-f",
         filePath,
         destFilePath,
       ],
     });
 
-    await pid.status();
+    await command.spawn().status;
   }
 }
 

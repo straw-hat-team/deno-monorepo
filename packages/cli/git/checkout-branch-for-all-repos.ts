@@ -15,11 +15,11 @@ async function main(args: Args) {
 
     log.info(`Branching ${cwd} directory to ${branchName}`);
 
-    const process = Deno.run({
-      cmd: ["git", "checkout", "-b", branchName],
+    const command = new Deno.Command("git", {
+      args: ["checkout", "-b", branchName],
       cwd: cwd,
     });
-    await process.status();
+    await command.spawn().status;
   }
 }
 
